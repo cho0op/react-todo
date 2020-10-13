@@ -13,7 +13,13 @@ function TodoList(props){
     return (
         <ul style = {styles.ul}>
             {props.todos.map((todo, index)=>{
-                return <TodoItem todo={todo} index={index} key={todo.id}></TodoItem>
+                return (
+                <TodoItem
+                    todo={todo}
+                    index={index}
+                    key={todo.id} 
+                    onChange={props.onToggle}>
+                </TodoItem>)
             })}
         </ul>
     )
